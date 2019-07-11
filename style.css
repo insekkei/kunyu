@@ -1,0 +1,139 @@
+html {
+  font-size: 14px;
+  font-family:sans-serif;
+  background: #fff url(./static/star.jpeg) no-repeat 0 0 fixed;
+  background-size: auto 100%;  
+}
+
+html, body {
+  margin: 0;
+}
+body {
+  background: url(./static/bg.png) repeat-y center 40rem fixed;
+  background-size: 30rem;  
+}
+h1 {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: .5rem 2rem;
+  margin: 1rem 0 3rem;
+  position: relative;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.times {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.times:before {
+  content: "";
+  display: block;
+  width: .2rem;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -.1rem;
+}
+
+.timeItem:nth-child(2n) {
+  transform: translateX(50%);
+}
+
+.timeItem:nth-child(2n-1) {
+  transform: translateX(-50%);
+}
+
+figure {
+  margin: 1rem 2rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+figure:before,
+figure:after {
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  left: 100%;
+  top: 8rem;
+  background: #fff;
+}
+figure:before {
+  width: calc(25%);
+}
+
+figure:after {
+  width: calc(15%);
+  transform: rotate(45deg) translate(-85%, 6px);
+}
+
+.timeItem:nth-child(2n) figure:before {
+  left: 0;
+  transform: translateX(-100%);
+}
+.timeItem:nth-child(2n) figure:after {
+  left: 0;
+  transform: rotate(135deg) translate(-10%, 6px);
+}
+
+figcaption {
+  margin: .5rem 0;
+  text-align:center;
+}
+.caption {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 3px 8px;
+  font-size: .8rem;
+  color: #fff;
+  background: rgba(0,0,0,.7);
+  border-radius: .4rem;
+}
+
+.image {
+  display: block;
+  box-sizing: border-box;
+  width: 8rem;
+  height: 8rem;
+  padding: .6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 1rem;
+  background:rgba(255,255,255,.7);
+}
+
+.image:hover {
+  transform: scale(1.1);
+  background:rgba(255,255,255,.9);
+  transition: all .1s ease-in-out;
+}
+
+#preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  z-index: 9;
+  display: none;
+}
+
+#preview.active {
+  display: flex;
+  align-items: center;
+}
+
+#previewImage {
+  width: 100%;
+  height: auto;
+}
