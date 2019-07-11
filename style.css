@@ -1,14 +1,16 @@
 html {
   font-size: 14px;
   font-family:sans-serif;
-  background: #fff url(./static/star.jpeg) no-repeat 0 0 fixed;
-  background-size: auto 100%;  
 }
 
 html, body {
   margin: 0;
 }
 body {
+  background: #fff url(./static/star.jpeg) no-repeat 0 0 fixed;
+  background-size: auto 100%;
+}
+.wrapper {
   background: url(./static/bg.png) repeat-y center 40rem fixed;
   background-size: 30rem;  
 }
@@ -136,4 +138,11 @@ figcaption {
 #previewImage {
   width: 100%;
   height: auto;
+}
+
+
+@media screen and (min-width: 768px) {
+  html {
+    background-size: cover;
+  }
 }
