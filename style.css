@@ -135,11 +135,14 @@ figcaption {
 #preview.active {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #previewImage {
   width: 100%;
   height: auto;
+  max-height: 100%;
+  max-width: 768px;
 }
 
 
