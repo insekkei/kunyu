@@ -7,12 +7,14 @@ html, body {
   margin: 0;
 }
 body {
-  background: #fff url(./static/star.jpeg) no-repeat 0 0 fixed;
+  background: #fff url(./static/star.jpeg) no-repeat 0 0;
+  background-attachment: fixed;
   background-size: auto 100%;
 }
 .wrapper {
   box-sizing: border-box;
-  background: url(./static/bg.png) repeat-y fixed;
+  background: url(./static/bg.png) repeat-y;
+  background-attachment: fixed;
   background-position: center 40rem;
   background-size: 30rem;  
 }
@@ -21,7 +23,7 @@ h1 {
   box-sizing: border-box;
   padding: .5rem 2rem;
   margin: 1rem 0 3rem;
-  position: relative;
+  position: absolute;
   font-size: 1.6rem;
   color: #fff;
 }
@@ -33,6 +35,8 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
+  top: 5rem;
+  padding-bottom: 10rem;
 }
 
 .times:before {
@@ -113,13 +117,28 @@ figcaption {
   border-radius: 50%;
   margin-top: 1rem;
   background:rgba(255,255,255,.7);
+  animation: twinkle 1s infinite;
 }
 
 .image:hover {
-  transform: scale(1.1);
   background:rgba(255,255,255,.9);
-  transition: all .1s ease-in-out;
 }
+
+@keyframes twinkle {
+  0% {
+    transform: scale(1);
+    background:rgba(255,255,255,.7);
+  }
+  50% {
+    transform: scale(1.1);
+    background:rgba(255,255,255,.8);
+  }
+  100% {
+    transform: scale(1);
+    background:rgba(255,255,255,.7);
+  }
+}
+
 
 #preview {
   position: fixed;
@@ -143,6 +162,34 @@ figcaption {
   height: auto;
   max-height: 100%;
   max-width: 768px;
+}
+
+.timing {
+  box-sizing: border-box;
+  position: fixed;
+  right: 0;
+  bottom: 30vh;
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  color: #fff;
+  background: rgba(0,0,0,.6);
+  z-index: 2;
+}
+
+.secondary {
+  font-size: 1.9rem;
+}
+
+.extra {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .timing {
+    right: 0;
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 

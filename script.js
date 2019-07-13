@@ -8,6 +8,8 @@ function initElement() {
   var previewImage = document.getElementById('previewImage');
   previewImage.onclick = hidePreview;
   preview.onclick = hidePreview;
+
+  calcDays()
 };
 
 function showPreview(event) {
@@ -31,6 +33,17 @@ function hidePreview() {
 
   var previewImage = document.getElementById('previewImage');
   previewImage.setAttribute('src', '');
+}
+
+function calcDays () {
+  var now = Date.now();
+  var bornTime = new Date('2019-04-02').getTime();
+  var bornDays = Math.floor((now - bornTime) / 1000 / 60 / 60 / 24);
+  document.getElementById('born').innerHTML = bornDays;
+
+  var examinationTime = new Date('2037-06-07').getTime();
+  var examinationDays = Math.floor((examinationTime - now) / 1000 / 60 / 60 / 24);
+  document.getElementById('examination').innerHTML = String(examinationDays);
 }
 
 initElement()
