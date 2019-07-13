@@ -24,8 +24,10 @@ h1 {
   padding: .5rem 2rem;
   margin: 1rem 0 3rem;
   position: absolute;
-  font-size: 1.6rem;
+  right: 0;
+  font-size: 2.6rem;
   color: #fff;
+  text-shadow: 1px 1px 1px #000;
 }
 .times {
   width: 100%;
@@ -35,7 +37,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  top: 5rem;
+  padding-top: 5rem;
   padding-bottom: 10rem;
 }
 
@@ -178,19 +180,34 @@ figcaption {
 
 .secondary {
   font-size: 1.9rem;
+  color: #ddd;
 }
 
 .extra {
   font-size: 1.3rem;
+  color: #bbb;
 }
 
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.6em;
+  }
   .timing {
     right: 0;
     width: 100%;
     bottom: 0;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .timing, .secondary, .extra {
+    font-size: 1rem;
+  }
+  .timing{
+    padding: 1rem 1.5rem;
+  }
+}
+
 
 
 @media screen and (min-width: 768px) {
