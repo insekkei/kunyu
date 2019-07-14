@@ -36,14 +36,31 @@ function hidePreview() {
 }
 
 function calcDays () {
-  var now = Date.now();
-  var bornTime = new Date('2019-04-02').getTime();
-  var bornDays = Math.floor((now - bornTime) / 1000 / 60 / 60 / 24);
-  document.getElementById('born').innerHTML = bornDays;
+  const bornTime = new Date('2019-04-02 19:53:00');
+
+  setInterval(
+    function(){
+      var now = Date.now();
+      var bornDiff = countdown(bornTime, Date.now(), countdown.YEARS | countdown.MONTHS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
+      var bornYears = bornDiff.years ? ` ${bornDiff.years} 年` : '';
+      var bornMonths = bornDiff.months ? ` ${bornDiff.months} 个月` : '';
+      var bornDays = bornDiff.days ? ` ${bornDiff.days} 天` : '';
+      var bornHours = bornDiff.hours ? ` ${bornDiff.hours} 时` : '';
+      var bornMinites = bornDiff.minutes ? ` ${bornDiff.minutes} 分` : '';
+      var bornSeconds = bornDiff.seconds ? ` ${bornDiff.seconds} 秒` : '';
+
+      var bornString = bornYears + bornMonths + bornDays + bornHours + bornMinites + bornSeconds;
+      document.getElementById('born').innerHTML = bornString;
+    },
+  1000);
+  
+
 
   var examinationTime = new Date('2037-06-07').getTime();
-  var examinationDays = Math.floor((examinationTime - now) / 1000 / 60 / 60 / 24);
+  var examinationDays = Math.floor((examinationTime - Date.now()) / 1000 / 60 / 60 / 24);
   document.getElementById('examination').innerHTML = String(examinationDays);
 }
 
 initElement()
+
+console.log(countdown(new Date('2019-04-02'), Date.now(), countdown.YEARS | countdown.MONTHS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).days);

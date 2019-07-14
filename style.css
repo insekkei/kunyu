@@ -219,6 +219,7 @@ figcaption {
 @media screen and (max-width: 414px) {
   h1 {
     font-size: 1.6em;
+    padding-right: .6rem;
   }
   .timing, .secondary, .extra {
     font-size: 1rem;
