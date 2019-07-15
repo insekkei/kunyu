@@ -36,12 +36,12 @@ function hidePreview() {
 }
 
 function calcDays () {
-  const bornTime = new Date('2019-04-02 19:53:00');
-
+  const bornTime = new Date('2019/04/02 19:53:00');
   setInterval(
     function(){
       var now = Date.now();
       var bornDiff = countdown(bornTime, Date.now(), countdown.YEARS | countdown.MONTHS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS);
+      console.log(bornDiff)
       var bornYears = bornDiff.years ? ` ${bornDiff.years} 年` : '';
       var bornMonths = bornDiff.months ? ` ${bornDiff.months} 个月` : '';
       var bornDays = bornDiff.days ? ` ${bornDiff.days} 天` : '';
@@ -62,5 +62,3 @@ function calcDays () {
 }
 
 initElement()
-
-console.log(countdown(new Date('2019-04-02'), Date.now(), countdown.YEARS | countdown.MONTHS | countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS).days);
